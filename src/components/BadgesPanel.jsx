@@ -1,13 +1,6 @@
 import React, { useMemo } from "react";
 
-function labelMode(mode) {
-  const m = String(mode || "");
-  if (m.includes("foot")) return "Marche";
-  if (m.includes("cycling")) return "Vélo";
-  if (m.includes("driving")) return "Voiture";
-  if (m.includes("transit")) return "Transports";
-  return mode || "-";
-}
+
 
 function iconMode(mode) {
   const m = String(mode || "");
@@ -75,7 +68,7 @@ export default function BadgesPanel({ trips = [] }) {
       const isEco = !String(t.mode_transport || "").includes("driving");
       byDay.set(day, (byDay.get(day) || false) || isEco);
     }
-    const days = Array.from(byDay.keys()).sort(); // ordre croissant
+    
     let streak = 0;
     // calc streak depuis aujourd'hui vers arrière
     const today = new Date().toISOString().slice(0, 10);

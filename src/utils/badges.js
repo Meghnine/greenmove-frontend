@@ -5,7 +5,7 @@ export function getBadgesForResult(r, context = {}) {
   const mode = String(r?.mode || "");
   const co2 = Number(r?.co2_kg ?? 0);
   const t = Number(r?.duree_min ?? 0);
-  const d = Number(r?.distance_km ?? 0);
+ 
 
   // --- Badges "sensibilisation" (simples et crédibles) ---
   // 1) Zéro émission
