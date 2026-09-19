@@ -28,3 +28,5 @@ jobs:
 
       - name: Construire l'application React
         run: npm run build
+      - name: Construire l'image Docker
+        run: docker build -t greenmove-frontend .
